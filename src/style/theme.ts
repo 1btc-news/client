@@ -12,11 +12,16 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
+// global font overrides
+const fonts = {
+  heading: 'sans-serif',
+  body: 'sans-serif',
+};
+
 // global style overrides
 const styles = {
   global: {
     root: {
-      fontFamily: 'serif',
       fontSize: '18px',
       lineHeight: '150%',
       color: 'white',
@@ -33,7 +38,7 @@ const styles = {
       minWidth: '100%',
       maxWidth: '1280px',
       minHeight: '100vh',
-      padding: '2 rem',
+      padding: '2rem',
       textAlign: 'center',
     },
     a: {
@@ -52,6 +57,6 @@ const styles = {
 };
 
 // extend the theme
-const theme = extendTheme({ config, styles });
+const theme = extendTheme({ config, fonts, styles });
 
 export default theme;
