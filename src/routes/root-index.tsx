@@ -3,30 +3,32 @@ import { Box, Heading, Text, Button, Stack, FormControl, Input } from '@chakra-u
 export default function RootIndex() {
   return (
     <Box
-      borderRadius="xl"
       display="flex"
       flexDir="column"
       w="100%"
     >
       <Stack
-        align={'center'}
+        w="100%"
+        maxW="600px"
+        m="0 auto"
         mb={8}
       >
-        <Heading
-          fontSize={'4xl'}
-          textAlign={'center'}
-        >
-          1btc.news
-        </Heading>
+        <Heading fontSize={['4xl', '6xl']}>1btc.news</Heading>
         <Text
-          fontSize={'lg'}
-          color={'gray.600'}
+          as="i"
+          fontSize={['md', 'xl']}
+          color={'gray.400'}
         >
-          All the news that's fit to inscribe.
+          "All the News That's Fit To Inscribe."
         </Text>
       </Stack>
 
-      <Stack spacing={4}>
+      <Stack
+        spacing={4}
+        w="100%"
+        maxW="600px"
+        m="0 auto"
+      >
         <FormControl
           id="title"
           isRequired
@@ -34,7 +36,7 @@ export default function RootIndex() {
           <Input
             type="text"
             placeholder="Enter your email"
-            fontSize={['xs', 'sm', 'xl']}
+            fontSize={['md', 'xl']}
           />
         </FormControl>
         <Stack
@@ -45,6 +47,7 @@ export default function RootIndex() {
             loadingText="Submitting"
             size="lg"
             borderRadius="xl"
+            variant="1btc-news-button"
           >
             Join Waitlist
           </Button>

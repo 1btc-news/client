@@ -1,3 +1,4 @@
+import '@fontsource/open-sans';
 import { ChakraProvider } from '@chakra-ui/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import theme from './style/theme';
