@@ -126,6 +126,7 @@ export default function ViewNews() {
       minH="100vh"
       maxW="800px"
       py={8}
+      px={4}
     >
       {news.author && <Text pb={3}>{news.author}</Text>}
       <Heading

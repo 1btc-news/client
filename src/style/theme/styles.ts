@@ -16,9 +16,6 @@ export const styles = {
       bg: 'black',
       color: 'white',
       minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      placeItems: 'center',
     },
     a: {
       color: 'var(--1btc-news-colors-brand-orange-900)',

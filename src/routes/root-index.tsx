@@ -9,6 +9,8 @@ export default function RootIndex() {
       justifyContent="center"
       w="100%"
       minH="100vh"
+      py={8}
+      px={4}
     >
       <Stack
         w="100%"
