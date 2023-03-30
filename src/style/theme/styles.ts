@@ -15,11 +15,10 @@ export const styles = {
     body: {
       bg: 'black',
       color: 'white',
-      minWidth: '100%',
-      maxWidth: '1280px',
       minHeight: '100vh',
-      padding: '2rem',
-      textAlign: 'left',
+      display: 'flex',
+      flexDirection: 'column',
+      placeItems: 'center',
     },
     a: {
       color: 'var(--1btc-news-colors-brand-orange-900)',

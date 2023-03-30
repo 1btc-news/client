@@ -5,6 +5,8 @@ export default function RootIndex() {
     <Box
       display="flex"
       flexDir="column"
+      alignItems="center"
+      justifyContent="center"
       w="100%"
     >
       <Stack
@@ -18,6 +20,7 @@ export default function RootIndex() {
           as="i"
           fontSize={['md', 'xl']}
           color={'gray.400'}
+          fontWeight={900}
         >
           "All the News That's Fit To Inscribe."
         </Text>
@@ -37,6 +40,7 @@ export default function RootIndex() {
             type="text"
             placeholder="Enter your email"
             fontSize={['md', 'xl']}
+            py={6}
           />
         </FormControl>
         <Stack
