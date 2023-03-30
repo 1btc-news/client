@@ -1,5 +1,4 @@
-import { Box, Heading, Text, Link as ChakraLink, Image, Button } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Box, Heading, Text, Button, Stack, FormControl, Input } from '@chakra-ui/react';
 
 export default function RootIndex() {
   return (
@@ -7,49 +6,50 @@ export default function RootIndex() {
       borderRadius="xl"
       display="flex"
       flexDir="column"
+      w="100%"
     >
-      <Image
-        boxSize="150px"
-        margin="0 auto"
-        src="/ordinal-news-logo.png"
-        alt="Ordinal News Logo"
-      />
-      <Heading>Ordinal News Standard</Heading>
-      <Text
-        fontSize="xl"
+      <Stack
+        align={'center'}
         mb={8}
       >
-        Permanently inscribe news and topics of discussion to Bitcoin.
-      </Text>
-      <Box
-        display="flex"
-        flexDir={['column', 'column', 'row']}
-        alignContent="center"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Button
-          as={Link}
-          to="/post-news"
-          className="link-button"
-          me={[0, 0, 8]}
-          mb={[8, 8, 0]}
-          w={['fit-content', '75%', 'auto']}
-          borderRadius="xl"
+        <Heading
+          fontSize={'4xl'}
+          textAlign={'center'}
         >
-          Inscribe the News
-        </Button>
-        <Button
-          as={ChakraLink}
-          href="https://docs.inscribe.news"
-          className="link-button"
-          isExternal
-          w={['fit-content', '75%', 'auto']}
-          borderRadius="xl"
+          1btc.news
+        </Heading>
+        <Text
+          fontSize={'lg'}
+          color={'gray.600'}
         >
-          Read the Docs
-        </Button>
-      </Box>
+          All the news that's fit to inscribe.
+        </Text>
+      </Stack>
+
+      <Stack spacing={4}>
+        <FormControl
+          id="title"
+          isRequired
+        >
+          <Input
+            type="text"
+            placeholder="Enter your email"
+            fontSize={['xs', 'sm', 'xl']}
+          />
+        </FormControl>
+        <Stack
+          spacing={10}
+          pt={2}
+        >
+          <Button
+            loadingText="Submitting"
+            size="lg"
+            borderRadius="xl"
+          >
+            Join Waitlist
+          </Button>
+        </Stack>
+      </Stack>
     </Box>
   );
 }
