@@ -10,6 +10,7 @@ const oneBtcOrange = '#f27400';
 const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: false,
+  cssVarPrefix: '1btc-news',
 };
 
 // global font overrides
@@ -23,7 +24,7 @@ const styles = {
   global: {
     root: {
       fontSize: '18px',
-      lineHeight: '150%',
+      lineHeight: '1.6',
       color: 'white',
       bg: 'black',
       fontSynthesis: 'none',
@@ -46,6 +47,9 @@ const styles = {
       _hover: {
         color: btcOrange,
         textDecoration: 'underline',
+      },
+      _visited: {
+        color: oneBtcOrange,
       },
     },
     button: {

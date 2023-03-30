@@ -18,6 +18,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import StatsCard from '../components/stats-card';
+import { countWordsAndEstimateReadingTime } from '../helpers';
 
 function useQuery() {
   const { search } = useLocation();
@@ -42,13 +43,18 @@ async function getInscriptionData(
   return undefined;
 }
 
+interface NewsStats {
+  wordCount: number;
+  readingTime: number;
+}
+
 export default function ViewNews() {
-  const { isOpen, onToggle } = useDisclosure();
   const query = useQuery();
   const id = query.get('id');
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<(InscriptionMeta & OrdinalNews) | undefined>(undefined);
   const [news, setNews] = useState<OrdinalNews | undefined>(undefined);
+  const [stats, setStats] = useState<NewsStats | undefined>(undefined);
 
   useEffect(() => {
     if (id) {
@@ -74,6 +80,12 @@ export default function ViewNews() {
       });
     }
   }, [id]);
+
+  useEffect(() => {
+    if (news && news.body) {
+      setStats(countWordsAndEstimateReadingTime(news.body));
+    }
+  }, [news]);
 
   if (!id) {
     return (
@@ -114,110 +126,43 @@ export default function ViewNews() {
       minH="100vh"
       maxW="800px"
     >
-      <Heading lineHeight={1}>{news.title}</Heading>
-      <Box
-        display="flex"
-        flexDir={['column', 'column', 'row']}
-        alignItems="center"
-        justifyContent="space-between"
+      {news.author && <Text pb={3}>{news.author}</Text>}
+      <Heading
+        as="h1"
+        lineHeight={1}
+        pb={3}
+        className="ord-news-title"
       >
-        <Box
-          display="flex"
-          flexDir="column"
-          justifyContent="space-between"
-          maxW="100%"
-          pt={3}
-        >
-          {news.author && <Text pb={3}>Author: {news.author}</Text>}
-          {news.url && (
-            <Text pb={3}>
-              URL:{' '}
-              <ChakraLink
-                href={news.url}
-                isExternal
-              >
-                {news.url}
-              </ChakraLink>
-            </Text>
-          )}
-        </Box>
-        <Button
-          ms={3}
-          mb={3}
-          minW="fit-content"
-          onClick={onToggle}
-        >
-          See Details
-        </Button>
-      </Box>
-      <Collapse
-        in={isOpen}
-        animateOpacity
-      >
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
-          spacing={{ base: 5, lg: 8 }}
-          mt={3}
-        >
-          <StatsCard
-            title="Inscription ID"
-            stat={data.id}
-          />
-          <StatsCard
-            title="Inscription #"
-            stat={data.number}
-          />
-          <StatsCard
-            title="Address"
-            stat={data.address}
-          />
-          <StatsCard
-            title="Content Type"
-            stat={data.content_type}
-          />
-          <StatsCard
-            title="Content Length"
-            stat={data.content_length}
-          />
-          <StatsCard
-            title="Block Height"
-            stat={data.genesis_block_height}
-          />
-          <StatsCard
-            title="Genesis TXID"
-            stat={data.genesis_tx_id}
-          />
-          <StatsCard
-            title="Timestamp"
-            stat={data.timestamp}
-          />
-          {news.authorAddress && (
-            <StatsCard
-              title="Author Address"
-              stat={news.authorAddress}
-            />
-          )}
-          {news.signature && (
-            <StatsCard
-              title="Author Signature"
-              stat={news.signature}
-            />
-          )}
-        </SimpleGrid>
-      </Collapse>
+        {news.url ? (
+          <ChakraLink
+            href={news.url}
+            isExternal
+          >
+            {news.title}
+          </ChakraLink>
+        ) : (
+          news.title
+        )}
+      </Heading>
+      <Text>
+        {new Date(data.timestamp).toLocaleDateString()}
+        {stats &&
+          ` • ${stats.wordCount.toLocaleString()} words • ${stats.readingTime.toLocaleString()} min read`}
+      </Text>
       {news.body && (
         <>
           <Divider
             orientation="horizontal"
             my={3}
+            style={{ background: 'white' }}
           />
           <ReactMarkdown
             components={ChakraUIRenderer()}
             children={news.body}
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
-            className="ord-news"
             linkTarget="_blank"
+            className="ord-news-body"
           ></ReactMarkdown>
         </>
       )}
