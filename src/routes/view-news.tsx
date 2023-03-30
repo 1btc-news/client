@@ -154,7 +154,7 @@ export default function ViewNews() {
           <Divider
             orientation="horizontal"
             my={3}
-            style={{ background: 'white' }}
+            style={{ background: 'var(--1btc-news-colors-whiteAlpha-500)' }}
           />
           <ReactMarkdown
             components={ChakraUIRenderer()}
