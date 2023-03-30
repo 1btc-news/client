@@ -8,6 +8,7 @@ export default function RootIndex() {
       alignItems="center"
       justifyContent="center"
       w="100%"
+      minH="100vh"
     >
       <Stack
         w="100%"
