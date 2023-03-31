@@ -160,7 +160,7 @@ export default function ViewNews() {
           <Divider
             orientation="horizontal"
             my={3}
-            style={{ background: 'var(--1btc-news-colors-whiteAlpha-500)' }}
+            style={{ background: 'var(--1btc-news-colors-whiteAlpha-300)' }}
           />
           <ReactMarkdown
             components={ChakraUIRenderer()}
