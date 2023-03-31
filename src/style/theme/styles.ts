@@ -5,7 +5,7 @@ export const styles = {
       fontSize: '18px',
       lineHeight: '1.6',
       color: 'white',
-      bg: 'black',
+      bg: 'var(--1btc-news-colors-brand-dark)',
       fontSynthesis: 'none',
       textRendering: 'optimizeLegibility',
       webkitFontSmoothing: 'antialiased',
@@ -18,13 +18,12 @@ export const styles = {
       minHeight: '100vh',
     },
     a: {
-      color: 'var(--1btc-news-colors-brand-orange-900)',
+      color: 'var(--1btc-news-colors-brand-orange)',
       _hover: {
-        color: 'var(--1btc-news-colors-brand-orange-700)',
         textDecoration: 'underline',
       },
       _visited: {
-        color: 'var(--1btc-news-colors-brand-orange-900)',
+        color: 'var(--1btc-news-colors-brand-orange)',
       },
     },
   },

@@ -10,10 +10,7 @@ export const components = {
   },
   Button: {
     baseStyle: {
-      bg: 'var(--1btc-news-colors-brand-orange-900)',
-    },
-    _hover: {
-      bg: 'var(--1btc-news-colors-brand-orange-700)',
+      bg: 'var(--1btc-news-colors-brand-orange)',
     },
     defaultProps: {
       variant: null,
@@ -26,7 +23,7 @@ export const components = {
         borderColor: 'var(--1btc-news-colors-whiteAlpha-50)',
         borderWidth: 1,
         ':focus': {
-          borderColor: 'var(--1btc-news-colors-brand-orange-900)',
+          borderColor: 'var(--1btc-news-colors-brand-orange)',
         },
         '::placeholder': {
           color: 'var(--1btc-news-colors-gray-600)',
@@ -34,7 +31,7 @@ export const components = {
       },
     },
     _hover: {
-      borderColor: 'var(--1btc-news-colors-brand-orange-900)',
+      borderColor: 'var(--1btc-news-colors-brand-orange)',
     },
     defaultProps: {
       variant: null,
