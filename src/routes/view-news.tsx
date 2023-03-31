@@ -128,7 +128,6 @@ export default function ViewNews() {
       py={8}
       px={4}
     >
-      {news.author && <Text pb={3}>{news.author}</Text>}
       <Heading
         as="h1"
         lineHeight={1}
@@ -147,7 +146,12 @@ export default function ViewNews() {
         )}
       </Heading>
       <Text>
-        {new Date(data.timestamp).toLocaleDateString()}
+        {news.author && <Text as="b">{`${news.author} • `}</Text>}
+        {new Date(data.timestamp).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
         {stats &&
           ` • ${stats.wordCount.toLocaleString()} words • ${stats.readingTime.toLocaleString()} min read`}
       </Text>
