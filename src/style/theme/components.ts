@@ -21,7 +21,8 @@ export const components = {
       field: {
         bg: 'var(--1btc-news-colors-white)',
         borderColor: 'var(--1btc-news-colors-whiteAlpha-50)',
-        borderWidth: 1,
+        borderWidth: 2,
+        color: 'black',
         ':focus': {
           borderColor: 'var(--1btc-news-colors-brand-orange)',
         },
