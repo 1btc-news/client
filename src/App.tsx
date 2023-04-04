@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <ViewNews />,
   },
   {
-    path: '/recent-news',
+    path: '/newest',
     element: <RecentNews />,
   },
 ]);
