@@ -161,7 +161,7 @@ export default function RecentNews() {
       py={8}
       px={4}
     >
-      <Heading>News Feed</Heading>
+      <Heading>1btc.news Feed</Heading>
       <Text>
         Detected {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
       </Text>
