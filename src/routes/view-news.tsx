@@ -1,15 +1,4 @@
-import {
-  Box,
-  Button,
-  Collapse,
-  Container,
-  Divider,
-  Heading,
-  Link as ChakraLink,
-  SimpleGrid,
-  Text,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Box, Container, Divider, Heading, Link as ChakraLink, Text } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
@@ -17,7 +6,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
-import StatsCard from '../components/stats-card';
 import { countWordsAndEstimateReadingTime } from '../helpers';
 
 function useQuery() {

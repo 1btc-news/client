@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import theme from './style/theme';
 import './style/news.css';
 import Root404 from './routes/root-404';
-import RootIndex from './routes/root-index';
 import PostNews from './routes/post-news';
 import ViewNews from './routes/view-news';
 import RecentNews from './routes/recent-news';
@@ -12,7 +11,7 @@ import RecentNews from './routes/recent-news';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <RootIndex />,
+    element: <RecentNews />,
     errorElement: <Root404 />,
   },
   {
@@ -22,10 +21,6 @@ const router = createBrowserRouter([
   {
     path: '/view-news',
     element: <ViewNews />,
-  },
-  {
-    path: '/newest',
-    element: <RecentNews />,
   },
 ]);
 
