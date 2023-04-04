@@ -29,7 +29,7 @@ async function getNewsData(id: string) {
 }
 
 function NewsItem(props: InscriptionMeta & OrdinalNews) {
-  const { id, number, timestamp, title, author } = props;
+  const { number, timestamp, title, author } = props;
   return (
     <VStack
       alignItems="flex-start"
@@ -51,8 +51,6 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
       <HStack flexWrap="wrap">
         <Text>{new Date(timestamp).toLocaleString()}</Text>
         <Text>•</Text>
-        <Text>News # 005</Text>
-        <Text>•</Text>
         <Text>Inscription # {number.toLocaleString()}</Text>
         <Text>•</Text>
         <Text>{author ? author : 'anonymous'}</Text>
@@ -61,6 +59,11 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
     </VStack>
   );
 }
+
+/*
+<Text>•</Text>
+<Text>News # 005</Text>
+*/
 
 export default function RecentNews() {
   const [loading, setLoading] = useState(true);
