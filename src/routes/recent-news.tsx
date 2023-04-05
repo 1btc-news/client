@@ -3,6 +3,7 @@ import { Badge, Box, Divider, Flex, Heading, HStack, Spacer, Text, VStack } from
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
+import Footer from '../components/footer';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -202,6 +203,7 @@ export default function RecentNews() {
             {...news}
           />
         ))}
+      <Footer />
     </Box>
   );
 }

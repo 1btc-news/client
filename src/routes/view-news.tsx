@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import { countWordsAndEstimateReadingTime } from '../helpers';
+import Footer from '../components/footer';
 
 function useQuery() {
   const { search } = useLocation();
@@ -190,6 +191,8 @@ export default function ViewNews() {
           ></ReactMarkdown>
         </>
       )}
+      <Divider mb={3} />
+      <Footer />
     </Container>
   );
 }

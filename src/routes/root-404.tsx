@@ -1,5 +1,6 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
+import Footer from '../components/footer';
 
 export default function Root404() {
   const location = useLocation();

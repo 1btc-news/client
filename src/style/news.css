@@ -2,6 +2,10 @@
   overflow-wrap: anywhere !important;
 }
 
+.bitcoin-icon:hover {
+  color: var(--1btc-news-colors-bitcoin-orange);
+}
+
 .ord-news-title a,
 .ord-news-title a:visited {
   color: white;
@@ -9,7 +13,7 @@
 
 .ord-news-title a:active,
 .ord-news-title a:hover {
-  color: #f27400;
+  color: var(--1btc-news-colors-brand-orange);
   text-decoration: none;
 }
 
@@ -32,8 +36,8 @@
   background:
      linear-gradient(
        to bottom,
-       #f27400 0%,
-       #f27400 100%
+       var(--1btc-news-colors-brand-orange) 0%,
+       var(--1btc-news-colors-brand-orange) 100%
      );
   background-position: 0 100%;
   background-repeat: repeat-x;
