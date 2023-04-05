@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Divider, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { Badge, Box, Divider, Flex, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react';
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
@@ -179,6 +179,8 @@ export default function RecentNews() {
         >
           1btc.news feed
         </Heading>
+        <Badge alignSelf="flex-start">beta</Badge>
+        <Spacer />
         <Text display={['none', 'none', 'block']}>
           {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
         </Text>
