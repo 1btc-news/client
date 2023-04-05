@@ -57,6 +57,7 @@
 .ord-news-body blockquote {
   color: var(--1btc-news-colors-gray-300);
   font-family: inherit;
+  font-size: 100%;
 }
 
 .ord-news-body img {
