@@ -1,3 +1,7 @@
+.link-wrap-hack {
+  overflow-wrap: anywhere !important;
+}
+
 .ord-news-title a,
 .ord-news-title a:visited {
   color: white;
