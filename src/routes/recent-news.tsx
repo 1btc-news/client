@@ -15,6 +15,7 @@ import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-t
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
+import HelmetSeo from '../components/helmet-seo';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -180,6 +181,10 @@ export default function RecentNews() {
       py={8}
       px={4}
     >
+      <HelmetSeo
+        title="Recent News"
+        image="https://client-2zi.pages.dev/logos/1btc-news-black.svg"
+      />
       <Flex
         alignItems="center"
         justifyContent="space-between"

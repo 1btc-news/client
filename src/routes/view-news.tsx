@@ -98,10 +98,10 @@ export default function ViewNews() {
         px={4}
       >
         <HelmetSeo
-          title="new title"
-          description="new description"
+          title="No Inscription ID"
+          description="Unable to load news inscription."
           image="https://client-2zi.pages.dev/logos/1btc-news-black.svg"
-          url="https://inscribe.news"
+          url="https://1btc.news"
         />
         <Image
           src="/logos/1btc-news-black.svg"
