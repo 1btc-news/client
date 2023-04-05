@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Divider, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/react';
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
@@ -49,11 +49,17 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
         </Link>
       </Heading>
       <HStack flexWrap="wrap">
-        <Text>{new Date(timestamp).toLocaleString()}</Text>
+        <Text as="b">{author ? author : 'anonymous'}</Text>
+        <Text>•</Text>
+        <Text>
+          {new Date(timestamp).toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </Text>
         <Text>•</Text>
         <Text>Inscription # {number.toLocaleString()}</Text>
-        <Text>•</Text>
-        <Text>{author ? author : 'anonymous'}</Text>
       </HStack>
       <Divider />
     </VStack>
@@ -161,10 +167,16 @@ export default function RecentNews() {
       py={8}
       px={4}
     >
-      <Heading>1btc.news Feed</Heading>
-      <Text>
-        Detected {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
-      </Text>
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        w="100%"
+      >
+        <Heading>1btc.news feed</Heading>
+        <Text display={['none', 'block']}>
+          {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
+        </Text>
+      </Flex>
       {newsData
         .sort((a, b) => {
           const dateA = new Date(a.timestamp);
