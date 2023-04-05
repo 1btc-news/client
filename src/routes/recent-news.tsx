@@ -195,7 +195,7 @@ export default function RecentNews() {
           as="h1"
           size={['2xl', '3xl']}
         >
-          1btc.news feed
+          1btc.news
         </Heading>
         <Badge
           alignSelf="flex-start"
