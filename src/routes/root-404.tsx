@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Image, Text } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Root404() {
@@ -15,6 +15,10 @@ export default function Root404() {
       py={8}
       px={4}
     >
+      <Image
+        src="/logos/1btc-news-black.svg"
+        boxSize="250px"
+      />
       <Heading
         as="h1"
         size="3xl"

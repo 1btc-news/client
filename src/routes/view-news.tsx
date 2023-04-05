@@ -1,4 +1,12 @@
-import { Box, Container, Divider, Heading, Link as ChakraLink, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Divider,
+  Heading,
+  Image,
+  Link as ChakraLink,
+  Text,
+} from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Footer from '../components/footer';
@@ -88,6 +96,10 @@ export default function ViewNews() {
         py={8}
         px={4}
       >
+        <Image
+          src="/logos/1btc-news-black.svg"
+          boxSize="250px"
+        />
         <Heading>No Inscription ID</Heading>
         <Text>Unable to load news inscription.</Text>
         <Text>Please provide the ID as a query parameter, or</Text>
@@ -109,6 +121,10 @@ export default function ViewNews() {
         py={8}
         px={4}
       >
+        <Image
+          src="/logos/1btc-news-black.svg"
+          boxSize="250px"
+        />
         <Heading>Loading inscription data...</Heading>
         <Text>ID: {id}</Text>
       </Box>
@@ -128,6 +144,10 @@ export default function ViewNews() {
         py={8}
         px={4}
       >
+        <Image
+          src="/logos/1btc-news-black.svg"
+          boxSize="250px"
+        />
         <Heading>Unable to Load</Heading>
         <Text>Unable to load news inscription.</Text>
         <Text>ID: {id}</Text>

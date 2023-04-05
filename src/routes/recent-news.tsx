@@ -1,5 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Badge, Box, Divider, Flex, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/react';
+import {
+  Badge,
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Spacer,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
@@ -126,6 +137,10 @@ export default function RecentNews() {
         py={8}
         px={4}
       >
+        <Image
+          src="/logos/1btc-news-black.svg"
+          boxSize="250px"
+        />
         <Text>Loading...</Text>
       </Box>
     );
@@ -144,6 +159,10 @@ export default function RecentNews() {
         py={8}
         px={4}
       >
+        <Image
+          src="/logos/1btc-news-black.svg"
+          boxSize="250px"
+        />
         <Text>Failed to load news.</Text>
       </Box>
     );
