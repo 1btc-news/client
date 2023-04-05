@@ -97,6 +97,12 @@ export default function ViewNews() {
         py={8}
         px={4}
       >
+        <HelmetSeo
+          title="new title"
+          description="new description"
+          image="https://client-2zi.pages.dev/logos/1btc-news-black.svg"
+          url="https://inscribe.news"
+        />
         <Image
           src="/logos/1btc-news-black.svg"
           boxSize="250px"
