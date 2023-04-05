@@ -20,8 +20,6 @@ async function getRecentNews() {
 async function getNewsData(id: string) {
   const news = await fetch(new URL(`/api/data/${id}`, apiUrl).toString());
   if (news.ok) {
-    //console.log(`news: ${typeof news}`);
-    //console.log(`news: ${JSON.stringify(news)}`);
     const newsData: InscriptionMeta & OrdinalNews = await news.json();
     return newsData;
   }
@@ -66,11 +64,6 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
     </VStack>
   );
 }
-
-/*
-<Text>•</Text>
-<Text>News # 005</Text>
-*/
 
 export default function RecentNews() {
   const [loading, setLoading] = useState(true);

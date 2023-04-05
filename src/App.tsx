@@ -8,7 +8,6 @@ import Root404 from './routes/root-404';
 import PostNews from './routes/post-news';
 import ViewNews from './routes/view-news';
 import RecentNews from './routes/recent-news';
-import RootIndex from './routes/root-index';
 
 const router = createBrowserRouter([
   {
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
   {
     path: '/view-news',
     element: <ViewNews />,
-  },
-  {
-    path: '/test',
-    element: <RootIndex />,
   },
 ]);
 

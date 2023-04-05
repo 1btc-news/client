@@ -1,13 +1,13 @@
 import { Box, Container, Divider, Heading, Link as ChakraLink, Text } from '@chakra-ui/react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Footer from '../components/footer';
 import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
+import { countWordsAndEstimateReadingTime } from '../helpers';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
-import { countWordsAndEstimateReadingTime } from '../helpers';
-import Footer from '../components/footer';
 
 function useQuery() {
   const { search } = useLocation();
