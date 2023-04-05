@@ -16,6 +16,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
+import HelmetSeo from '../components/helmet-seo';
 
 function useQuery() {
   const { search } = useLocation();
@@ -166,6 +167,11 @@ export default function ViewNews() {
       py={8}
       px={4}
     >
+      <HelmetSeo
+        title={news.title}
+        description={news.body}
+        url={news.url}
+      />
       <Heading
         as="h1"
         lineHeight={1}
