@@ -1,6 +1,7 @@
 import '@fontsource/open-sans';
 import { ChakraProvider } from '@chakra-ui/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Fonts from './components/fonts';
 import theme from './style/theme';
 import './style/news.css';
 import Root404 from './routes/root-404';
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <ChakraProvider theme={theme}>
+      <Fonts />
       <RouterProvider router={router} />
     </ChakraProvider>
   );
