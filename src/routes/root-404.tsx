@@ -15,7 +15,12 @@ export default function Root404() {
       py={8}
       px={4}
     >
-      <Heading>404 - not found!</Heading>
+      <Heading
+        as="h1"
+        size="3xl"
+      >
+        404 - not found!
+      </Heading>
       <Text>We couldn't find that page.</Text>
       <br />
       <Text>

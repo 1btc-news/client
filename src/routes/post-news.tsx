@@ -132,10 +132,15 @@ export default function PostNews() {
   return (
     <>
       <Box
-        borderRadius="xl"
         display="flex"
         flexDir="column"
+        alignItems="center"
+        justifyContent="center"
+        textAlign="left"
         w="100%"
+        minH="100vh"
+        py={8}
+        px={4}
       >
         <Stack
           align={'center'}

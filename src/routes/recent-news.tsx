@@ -171,9 +171,15 @@ export default function RecentNews() {
         alignItems="center"
         justifyContent="space-between"
         w="100%"
+        maxW={1200}
       >
-        <Heading>1btc.news feed</Heading>
-        <Text display={['none', 'block']}>
+        <Heading
+          as="h1"
+          size={['2xl', '3xl']}
+        >
+          1btc.news feed
+        </Heading>
+        <Text display={['none', 'none', 'block']}>
           {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
         </Text>
       </Flex>
