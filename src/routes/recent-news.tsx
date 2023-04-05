@@ -179,7 +179,12 @@ export default function RecentNews() {
         >
           1btc.news feed
         </Heading>
-        <Badge alignSelf="flex-start">beta</Badge>
+        <Badge
+          alignSelf="flex-start"
+          ms={3}
+        >
+          beta
+        </Badge>
         <Spacer />
         <Text display={['none', 'none', 'block']}>
           {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
