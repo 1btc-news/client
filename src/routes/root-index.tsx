@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Button, Stack, FormControl, Input } from '@chakra-ui/react';
+import SignupForm from '../components/signup-form';
 
 export default function RootIndex() {
   return (
@@ -29,37 +30,7 @@ export default function RootIndex() {
         </Text>
       </Stack>
 
-      <Stack
-        spacing={4}
-        w="100%"
-        maxW="600px"
-        m="0 auto"
-      >
-        <FormControl
-          id="title"
-          isRequired
-        >
-          <Input
-            type="text"
-            placeholder="Enter your email"
-            fontSize={['md', 'xl']}
-            py={6}
-          />
-        </FormControl>
-        <Stack
-          spacing={10}
-          pt={2}
-        >
-          <Button
-            loadingText="Submitting"
-            size="lg"
-            borderRadius="xl"
-            variant="1btc-news-button"
-          >
-            Join Waitlist
-          </Button>
-        </Stack>
-      </Stack>
+      <SignupForm />
     </Box>
   );
 }
