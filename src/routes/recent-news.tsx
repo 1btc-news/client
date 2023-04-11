@@ -201,7 +201,7 @@ export default function RecentNews() {
           alignSelf="flex-start"
           ms={3}
         >
-          beta
+          raw feed
         </Badge>
         <Spacer />
         <Text display={['none', 'none', 'block']}>
