@@ -181,10 +181,7 @@ export default function RecentNews() {
       py={8}
       px={4}
     >
-      <HelmetSeo
-        title="Recent News"
-        image="https://client-2zi.pages.dev/logos/1btc-news-black.svg"
-      />
+      <HelmetSeo title="Recent News" />
       <Flex
         alignItems="center"
         justifyContent="space-between"
