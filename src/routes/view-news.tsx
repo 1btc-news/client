@@ -181,7 +181,7 @@ export default function ViewNews() {
         lineHeight={1}
         pb={3}
         className="ord-news-title"
-        size="3xl"
+        size="2xl"
       >
         {news.url ? (
           <ChakraLink
