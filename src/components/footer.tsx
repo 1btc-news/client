@@ -16,41 +16,27 @@ export default function Footer() {
     <VStack
       fontWeight={900}
       alignItems="start"
+      width="100%"
+      maxW="1200px"
     >
       <Heading pt={6}>
-        News on the Ledger of Record <BitcoinIcon color="#F7931A"></BitcoinIcon>
+        News on the ledger of record <BitcoinIcon color="#F7931A"></BitcoinIcon>
       </Heading>
       <Stack direction={['column', 'column', 'row']}>
-        <Link to="/">1btc.news Home</Link>
+        <Link to="/">1btc.news home</Link>
         <Divider
           orientation="vertical"
           hideBelow="sm"
         />
-        <ChakraLink
-          isExternal
-          href="https://github.com/1btc-news/client"
-        >
-          1btc.news GitHub
-        </ChakraLink>
         <Divider
+          hideAbove="sm"
           orientation="vertical"
-          hideBelow="sm"
         />
         <ChakraLink
           isExternal
           href="https://docs.inscribe.news"
         >
-          Ordinal News Standard
-        </ChakraLink>
-        <Divider
-          orientation="vertical"
-          hideBelow="sm"
-        />
-        <ChakraLink
-          isExternal
-          href="https://inscribe.news/post-news"
-        >
-          Inscribe the News
+          inscribe the news
         </ChakraLink>
       </Stack>
     </VStack>
