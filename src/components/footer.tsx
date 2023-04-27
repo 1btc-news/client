@@ -28,10 +28,6 @@ export default function Footer() {
           orientation="vertical"
           hideBelow="sm"
         />
-        <Divider
-          hideAbove="sm"
-          orientation="vertical"
-        />
         <ChakraLink
           isExternal
           href="https://docs.inscribe.news"
