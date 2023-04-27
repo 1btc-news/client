@@ -18,7 +18,7 @@ export default function Footer() {
         color={'gray.400'}
         fontWeight={900}
       >
-        "All The News That's Fit To Inscribe" <BitcoinIcon color="#F7931A"></BitcoinIcon>
+        "News on the Ledger of Record." <BitcoinIcon color="#F7931A"></BitcoinIcon>
       </Text>
     </HStack>
   );

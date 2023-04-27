@@ -1,3 +1,3 @@
 # 1btc.news
 
-_“All the News That's Fit To Inscribe”_
+_“News on the Ledger of Record.”_
