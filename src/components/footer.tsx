@@ -13,7 +13,7 @@ export default function Footer() {
       maxW="1200px"
     >
       <Heading pt={6}>
-        News on the ledger of record <BitcoinIcon color="#F7931A"></BitcoinIcon>
+        News on the ledger of record. <BitcoinIcon color="#F7931A"></BitcoinIcon>
       </Heading>
       <Stack direction={['column', 'column', 'row']}>
         {location.pathname !== '/' && (
@@ -27,9 +27,9 @@ export default function Footer() {
         )}
         <ChakraLink
           isExternal
-          href="https://docs.inscribe.news"
+          href="https://inscribe.news"
         >
-          inscribe the news
+          inscribe.news
         </ChakraLink>
       </Stack>
     </VStack>
