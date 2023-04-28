@@ -22,16 +22,22 @@ export default function Root404() {
       <Heading
         as="h1"
         size="3xl"
+        pb={4}
       >
         404 - not found!
       </Heading>
-      <Text>We couldn't find that page.</Text>
+      <Text fontSize="xl">We couldn't find that page.</Text>
       <br />
-      <Text>
-        Please try a different page or <Link to="/">click this link to return home.</Link>
+      <Text
+        fontSize="xl"
+        as="b"
+      >
+        Current location: {location.pathname}
       </Text>
       <br />
-      <Text>Current location: {location.pathname}</Text>
+      <Text fontSize="xl">
+        Please try a different page or <Link to="/">click this link to return home.</Link>
+      </Text>
     </Box>
   );
 }
