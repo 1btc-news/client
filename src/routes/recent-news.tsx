@@ -187,6 +187,7 @@ export default function RecentNews() {
         justifyContent="space-between"
         w="100%"
         maxW={1200}
+        pb={6}
       >
         <Heading
           as="h1"
