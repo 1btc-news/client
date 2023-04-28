@@ -9,7 +9,7 @@ interface SeoProps {
 
 export default function HelmetSeo(props: SeoProps) {
   const title = `${props.title} | 1btc.news` ?? '1btc.news';
-  const description = props.description ?? 'News on the Ledger of Record.';
+  const description = props.description ?? 'News on the ledger of record.';
   const image = props.image ?? 'https://1btc.news/logos/1btc-news-orange.png';
   const url = props.url ?? 'https://1btc.news/';
 
