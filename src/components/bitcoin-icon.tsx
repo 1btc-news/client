@@ -8,6 +8,7 @@ export default function BitcoinIcon({ color = 'currentColor', boxSize = '1em' })
       viewBox="0 0 64 64"
       className="bitcoin-icon"
       boxSize={boxSize}
+      mb={2}
     >
       <g transform="translate(0.00630876,-0.00301984)">
         <path
