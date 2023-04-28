@@ -29,7 +29,7 @@ export default function Footer() {
           isExternal
           href="https://inscribe.news"
         >
-          inscribe.news
+          Inscribe News
         </ChakraLink>
       </Stack>
     </VStack>
