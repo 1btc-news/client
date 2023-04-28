@@ -18,7 +18,7 @@ export default function Footer() {
       <Stack direction={['column', 'column', 'row']}>
         {location.pathname !== '/' && (
           <>
-            <Link to="/">1btc.news home</Link>
+            <Link to="/">Home</Link>
             <Divider
               orientation="vertical"
               hideBelow="sm"
