@@ -1,25 +1,37 @@
-import { HStack, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link as ChakraLink, VStack, Heading, Stack, Divider } from '@chakra-ui/react';
+import { Link, useLocation } from 'react-router-dom';
 import BitcoinIcon from './bitcoin-icon';
 
 export default function Footer() {
+  const location = useLocation();
+
   return (
-    <HStack
-      w="100%"
-      maxW={1200}
-      justifyContent="space-between"
+    <VStack
+      fontWeight={900}
+      alignItems="start"
+      width="100%"
+      maxW="1200px"
     >
-      <HStack fontWeight={900}>
-        <Link to="/">Home</Link>
-      </HStack>
-      <Text
-        as="i"
-        fontSize={['md', 'lg']}
-        color={'gray.400'}
-        fontWeight={900}
-      >
-        "All The News That's Fit To Inscribe" <BitcoinIcon color="#F7931A"></BitcoinIcon>
-      </Text>
-    </HStack>
+      <Heading pt={6}>
+        News on the ledger of record. <BitcoinIcon color="#F7931A"></BitcoinIcon>
+      </Heading>
+      <Stack direction={['column', 'column', 'row']}>
+        {location.pathname !== '/' && (
+          <>
+            <Link to="/">1btc.news home</Link>
+            <Divider
+              orientation="vertical"
+              hideBelow="sm"
+            />
+          </>
+        )}
+        <ChakraLink
+          isExternal
+          href="https://inscribe.news"
+        >
+          Inscribe News
+        </ChakraLink>
+      </Stack>
+    </VStack>
   );
 }

@@ -2,11 +2,13 @@ import { Icon } from '@chakra-ui/react';
 
 // credit for the bitcoin icon
 // https://commons.wikimedia.org/wiki/File:Bitcoin_logo.svg#/media/File:Bitcoin.svg
-export default function BitcoinIcon({ color = 'currentColor' }) {
+export default function BitcoinIcon({ color = 'currentColor', boxSize = '1em' }) {
   return (
     <Icon
       viewBox="0 0 64 64"
       className="bitcoin-icon"
+      boxSize={boxSize}
+      mb={2}
     >
       <g transform="translate(0.00630876,-0.00301984)">
         <path
