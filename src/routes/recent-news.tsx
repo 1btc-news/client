@@ -2,13 +2,30 @@ import { useEffect, useState } from 'react';
 import {
   Badge,
   Box,
+  Button,
   Divider,
   Flex,
   Heading,
   HStack,
   Image,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTrigger,
   Spacer,
+  Stack,
   Text,
+  useDisclosure,
   VStack,
 } from '@chakra-ui/react';
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
@@ -16,6 +33,7 @@ import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 import HelmetSeo from '../components/helmet-seo';
+import SignupForm from '../components/signup-form';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -83,6 +101,7 @@ export default function RecentNews() {
   const [newsData, setNewsData] = useState<(InscriptionMeta & OrdinalNews)[] | undefined>(
     undefined
   );
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     getRecentNews()
@@ -188,23 +207,24 @@ export default function RecentNews() {
         w="100%"
         maxW={1200}
         pb={6}
+        direction={['column', 'row']}
       >
-        <Heading
-          as="h1"
-          size={['2xl', '3xl']}
+        <Flex alignItems="flex-start">
+          <Heading
+            as="h1"
+            size={['2xl', '3xl']}
+          >
+            1btc.news
+          </Heading>
+          <Badge ms={3}>raw feed</Badge>
+        </Flex>
+        <Button
+          size={['md', 'md', 'lg']}
+          onClick={onOpen}
+          w={['100%', 'auto']}
         >
-          1btc.news
-        </Heading>
-        <Badge
-          alignSelf="flex-start"
-          ms={3}
-        >
-          raw feed
-        </Badge>
-        <Spacer />
-        <Text display={['none', 'none', 'block']}>
-          {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
-        </Text>
+          Join waitlist
+        </Button>
       </Flex>
       {newsData
         .sort((a, b) => {
@@ -219,6 +239,82 @@ export default function RecentNews() {
           />
         ))}
       <Footer />
+      <Modal
+        allowPinchZoom
+        autoFocus
+        onClose={onClose}
+        isOpen={isOpen}
+        size="xl"
+        scrollBehavior="inside"
+        isCentered
+      >
+        <ModalOverlay
+          bg="blackAlpha.200"
+          backdropFilter="blur(2px)"
+        />
+        <ModalContent bgColor="var(--1btc-news-colors-brand-darkgray)">
+          <ModalCloseButton />
+          <ModalBody
+            textAlign="center"
+            pt={16}
+            pb={12}
+          >
+            <Box>
+              <Text
+                fontWeight="bold"
+                fontSize={['2xl', '2xl', '4xl']}
+                display={{ base: 'inline', sm: 'block' }}
+              >
+                Sign up to be first to access
+              </Text>
+              <Text
+                fontWeight="bold"
+                fontSize={['2xl', '2xl', '4xl']}
+                display={{ base: 'inline', sm: 'block' }}
+              >
+                {' '}
+                upcoming 1btc products.
+              </Text>
+            </Box>
+            <Text
+              mb={6}
+              fontSize={['sm', 'md', 'lg']}
+            >
+              Stay up to date with 1btc.news.
+            </Text>
+            <SignupForm />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 }
+
+/* Popover form version
+
+<Popover>
+  <PopoverTrigger>
+    <Button
+      size={['xs', 'sm', 'md']}
+      overflowWrap={'break-word'}
+    >
+      Join Waitlist
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader
+      pt={4}
+      fontWeight="bold"
+      fontSize="xl"
+      border="0"
+    >
+      Stay up to date
+    </PopoverHeader>
+    <PopoverCloseButton />
+    <PopoverBody>
+      <SignupForm />
+    </PopoverBody>
+  </PopoverContent>
+</Popover>
+
+*/
