@@ -214,7 +214,12 @@ export default function RecentNews() {
         <Spacer />
         <Popover>
           <PopoverTrigger>
-            <Button>Join Waitlist</Button>
+            <Button
+              size={['xs', 'sm', 'md']}
+              overflowWrap={'break-word'}
+            >
+              Join Waitlist
+            </Button>
           </PopoverTrigger>
           <PopoverContent>
             <PopoverHeader
