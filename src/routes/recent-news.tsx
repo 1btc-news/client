@@ -191,7 +191,7 @@ export default function RecentNews() {
     >
       <HelmetSeo title="Recent News" />
       <Flex
-        alignItems="center"
+        alignItems={['flex-start', 'center']}
         justifyContent="space-between"
         w="100%"
         maxW={1200}
@@ -205,6 +205,7 @@ export default function RecentNews() {
           <Heading
             as="h1"
             size={['2xl', '3xl']}
+            mb={[6, 0]}
           >
             1btc.news
           </Heading>
@@ -214,6 +215,7 @@ export default function RecentNews() {
           size={['md', 'md', 'lg']}
           onClick={onOpen}
           w={['100%', 'auto']}
+          maxW="240px"
         >
           Join waitlist
         </Button>
