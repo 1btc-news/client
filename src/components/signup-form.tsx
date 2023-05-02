@@ -92,9 +92,10 @@ export default function SignupForm() {
       </FormControl>
       <Button
         loadingText="Submitting"
-        size="lg"
+        px={6}
+        py={6}
+        fontSize="lg"
         borderRadius="xl"
-        variant="1btc-news-button"
         onClick={handleSubmit}
       >
         Join waitlist

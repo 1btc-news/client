@@ -207,24 +207,21 @@ export default function RecentNews() {
         w="100%"
         maxW={1200}
         pb={6}
+        direction={['column', 'row']}
       >
-        <Heading
-          as="h1"
-          size={['2xl', '3xl']}
-        >
-          1btc.news
-        </Heading>
-        <Badge
-          alignSelf="flex-start"
-          ms={3}
-        >
-          raw feed
-        </Badge>
-        <Spacer />
+        <Flex alignItems="flex-start">
+          <Heading
+            as="h1"
+            size={['2xl', '3xl']}
+          >
+            1btc.news
+          </Heading>
+          <Badge ms={3}>raw feed</Badge>
+        </Flex>
         <Button
-          size={['xs', 'sm', 'md']}
-          overflowWrap={'break-word'}
+          size={['md', 'md', 'lg']}
           onClick={onOpen}
+          w={['100%', 'auto']}
         >
           Join waitlist
         </Button>
@@ -259,7 +256,8 @@ export default function RecentNews() {
           <ModalCloseButton />
           <ModalBody
             textAlign="center"
-            py={16}
+            pt={16}
+            pb={12}
           >
             <Box mb={6}>
               <Text
