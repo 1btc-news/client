@@ -92,10 +92,8 @@ export default function SignupForm() {
       </FormControl>
       <Button
         loadingText="Submitting"
-        px={6}
-        py={6}
-        fontSize="lg"
-        borderRadius="xl"
+        size="lg"
+        height="52px"
         onClick={handleSubmit}
       >
         Join waitlist

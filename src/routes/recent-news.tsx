@@ -259,23 +259,29 @@ export default function RecentNews() {
             pt={16}
             pb={12}
           >
-            <Box mb={6}>
+            <Box>
               <Text
                 fontWeight="bold"
-                fontSize="2xl"
+                fontSize={['2xl', '2xl', '4xl']}
                 display={{ base: 'inline', sm: 'block' }}
               >
                 Sign up to be first to access
               </Text>
               <Text
                 fontWeight="bold"
-                fontSize="2xl"
+                fontSize={['2xl', '2xl', '4xl']}
                 display={{ base: 'inline', sm: 'block' }}
               >
                 {' '}
                 upcoming 1btc products.
               </Text>
             </Box>
+            <Text
+              mb={6}
+              fontSize={['sm', 'md', 'lg']}
+            >
+              Stay up to date with 1btc.news, etc.
+            </Text>
             <SignupForm />
           </ModalBody>
         </ModalContent>
