@@ -8,6 +8,12 @@ import {
   Heading,
   HStack,
   Image,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -17,7 +23,9 @@ import {
   PopoverHeader,
   PopoverTrigger,
   Spacer,
+  Stack,
   Text,
+  useDisclosure,
   VStack,
 } from '@chakra-ui/react';
 import { KVNamespaceListKey, KVNamespaceListResult } from '@cloudflare/workers-types';
@@ -93,6 +101,7 @@ export default function RecentNews() {
   const [newsData, setNewsData] = useState<(InscriptionMeta & OrdinalNews)[] | undefined>(
     undefined
   );
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     getRecentNews()
@@ -212,30 +221,13 @@ export default function RecentNews() {
           raw feed
         </Badge>
         <Spacer />
-        <Popover>
-          <PopoverTrigger>
-            <Button
-              size={['xs', 'sm', 'md']}
-              overflowWrap={'break-word'}
-            >
-              Join Waitlist
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverHeader
-              pt={4}
-              fontWeight="bold"
-              fontSize="xl"
-              border="0"
-            >
-              Stay up to date
-            </PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-              <SignupForm />
-            </PopoverBody>
-          </PopoverContent>
-        </Popover>
+        <Button
+          size={['xs', 'sm', 'md']}
+          overflowWrap={'break-word'}
+          onClick={onOpen}
+        >
+          Join waitlist
+        </Button>
       </Flex>
       {newsData
         .sort((a, b) => {
@@ -250,6 +242,75 @@ export default function RecentNews() {
           />
         ))}
       <Footer />
+      <Modal
+        allowPinchZoom
+        autoFocus
+        onClose={onClose}
+        isOpen={isOpen}
+        size="xl"
+        scrollBehavior="inside"
+        isCentered
+      >
+        <ModalOverlay
+          bg="blackAlpha.200"
+          backdropFilter="blur(2px)"
+        />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody
+            textAlign="center"
+            py={16}
+          >
+            <Box mb={6}>
+              <Text
+                fontWeight="bold"
+                fontSize="2xl"
+                display={{ base: 'inline', sm: 'block' }}
+              >
+                Sign up to be first to access
+              </Text>
+              <Text
+                fontWeight="bold"
+                fontSize="2xl"
+                display={{ base: 'inline', sm: 'block' }}
+              >
+                {' '}
+                upcoming 1btc products.
+              </Text>
+            </Box>
+            <SignupForm />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 }
+
+/* Popover form version
+
+<Popover>
+  <PopoverTrigger>
+    <Button
+      size={['xs', 'sm', 'md']}
+      overflowWrap={'break-word'}
+    >
+      Join Waitlist
+    </Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader
+      pt={4}
+      fontWeight="bold"
+      fontSize="xl"
+      border="0"
+    >
+      Stay up to date
+    </PopoverHeader>
+    <PopoverCloseButton />
+    <PopoverBody>
+      <SignupForm />
+    </PopoverBody>
+  </PopoverContent>
+</Popover>
+
+*/

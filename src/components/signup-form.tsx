@@ -4,27 +4,12 @@ import {
   FormErrorMessage,
   Input,
   Stack,
-  StackDirection,
   Text,
   useControllableState,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
-export default function SignupForm({ dir = 'col' }) {
-  // responsive styling
-  let direction: StackDirection;
-  switch (dir) {
-    case 'col':
-    case 'column':
-      direction = 'column';
-      break;
-    case 'row':
-      direction = 'row';
-      break;
-    default:
-      direction = 'column';
-  }
-
+export default function SignupForm() {
   // simple email validator
   function validateEmail(email: string) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -85,8 +70,8 @@ export default function SignupForm({ dir = 'col' }) {
 
   return (
     <Stack
-      spacing={4}
-      direction={direction}
+      spacing={6}
+      direction={['column', 'row']}
       w="100%"
       maxW="600px"
       m="0 auto"
@@ -99,26 +84,21 @@ export default function SignupForm({ dir = 'col' }) {
         <Input
           type="text"
           placeholder="Enter your email"
-          fontSize={['md', 'xl']}
+          fontSize="xl"
           py={6}
           onChange={e => setEmail(e.target.value)}
         />
-        <FormErrorMessage>Please provide a valid email.</FormErrorMessage>
+        <FormErrorMessage fontWeight="bold">Please provide a valid email.</FormErrorMessage>
       </FormControl>
-      <Stack
-        spacing={10}
-        pt={2}
+      <Button
+        loadingText="Submitting"
+        size="lg"
+        borderRadius="xl"
+        variant="1btc-news-button"
+        onClick={handleSubmit}
       >
-        <Button
-          loadingText="Submitting"
-          size="lg"
-          borderRadius="xl"
-          variant="1btc-news-button"
-          onClick={handleSubmit}
-        >
-          Join Waitlist
-        </Button>
-      </Stack>
+        Join waitlist
+      </Button>
     </Stack>
   );
 }
