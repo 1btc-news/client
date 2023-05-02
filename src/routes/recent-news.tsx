@@ -10,20 +10,9 @@ import {
   Image,
   Modal,
   ModalOverlay,
-  ModalHeader,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverFooter,
-  PopoverHeader,
-  PopoverTrigger,
-  Spacer,
-  Stack,
   Text,
   useDisclosure,
   VStack,
@@ -289,32 +278,3 @@ export default function RecentNews() {
     </Box>
   );
 }
-
-/* Popover form version
-
-<Popover>
-  <PopoverTrigger>
-    <Button
-      size={['xs', 'sm', 'md']}
-      overflowWrap={'break-word'}
-    >
-      Join Waitlist
-    </Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverHeader
-      pt={4}
-      fontWeight="bold"
-      fontSize="xl"
-      border="0"
-    >
-      Stay up to date
-    </PopoverHeader>
-    <PopoverCloseButton />
-    <PopoverBody>
-      <SignupForm />
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
-
-*/
