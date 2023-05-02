@@ -253,7 +253,10 @@ export default function RecentNews() {
             pt={16}
             pb={12}
           >
-            <Box mb={3}>
+            <Box
+              mb={3}
+              lineHeight={1}
+            >
               <Text
                 fontWeight="bold"
                 fontSize={['2xl', '2xl', '4xl']}

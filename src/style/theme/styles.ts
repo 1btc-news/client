@@ -3,7 +3,7 @@ export const styles = {
   global: {
     root: {
       fontSize: '18px',
-      lineHeight: '1.6',
+      lineHeight: '1.5',
       color: 'white',
       bg: 'var(--1btc-news-colors-brand-dark)',
       fontSynthesis: 'none',
