@@ -253,7 +253,7 @@ export default function RecentNews() {
             pt={16}
             pb={12}
           >
-            <Box>
+            <Box mb={3}>
               <Text
                 fontWeight="bold"
                 fontSize={['2xl', '2xl', '4xl']}
@@ -274,7 +274,8 @@ export default function RecentNews() {
               mb={6}
               fontSize={['sm', 'md', 'lg']}
             >
-              Stay up to date with 1btc.news.
+              Stay up to date with 1btc.news, and get the top-ranked Bitcoin news sent directly to
+              your inbox.
             </Text>
             <SignupForm />
           </ModalBody>
