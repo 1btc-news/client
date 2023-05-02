@@ -280,7 +280,7 @@ export default function RecentNews() {
               mb={6}
               fontSize={['sm', 'md', 'lg']}
             >
-              Stay up to date with 1btc.news, etc.
+              Stay up to date with 1btc.news.
             </Text>
             <SignupForm />
           </ModalBody>

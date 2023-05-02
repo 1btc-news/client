@@ -63,9 +63,9 @@ export default function SignupForm() {
 
   if (formState.isSubmitted) {
     if (formState.isError) {
-      return <Text>Error, please refresh.</Text>;
+      return <Text fontSize={['sm', 'md', 'lg']}>Error, please refresh.</Text>;
     }
-    return <Text>Thank you for signing up!</Text>;
+    return <Text fontSize={['sm', 'md', 'lg']}>Thank you for signing up!</Text>;
   }
 
   return (
