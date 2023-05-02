@@ -2,11 +2,20 @@ import { useEffect, useState } from 'react';
 import {
   Badge,
   Box,
+  Button,
   Divider,
   Flex,
   Heading,
   HStack,
   Image,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTrigger,
   Spacer,
   Text,
   VStack,
@@ -16,6 +25,7 @@ import { InscriptionMeta, OrdinalNews } from '../../lib/api-types';
 import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 import HelmetSeo from '../components/helmet-seo';
+import SignupForm from '../components/signup-form';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -202,9 +212,25 @@ export default function RecentNews() {
           raw feed
         </Badge>
         <Spacer />
-        <Text display={['none', 'none', 'block']}>
-          {newsList.length} news inscription{newsList.length > 1 ? 's' : null}
-        </Text>
+        <Popover>
+          <PopoverTrigger>
+            <Button>Join Waitlist</Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverHeader
+              pt={4}
+              fontWeight="bold"
+              fontSize="xl"
+              border="0"
+            >
+              Stay up to date
+            </PopoverHeader>
+            <PopoverCloseButton />
+            <PopoverBody>
+              <SignupForm />
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       </Flex>
       {newsData
         .sort((a, b) => {
