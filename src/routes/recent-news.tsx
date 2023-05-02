@@ -198,7 +198,10 @@ export default function RecentNews() {
         pb={6}
         direction={['column', 'row']}
       >
-        <Flex alignItems="flex-start">
+        <Flex
+          alignItems="flex-start"
+          w={['100%', 'auto']}
+        >
           <Heading
             as="h1"
             size={['2xl', '3xl']}
