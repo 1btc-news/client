@@ -262,7 +262,7 @@ export default function RecentNews() {
                 fontSize={['2xl', '2xl', '4xl']}
                 display={{ base: 'inline', sm: 'block' }}
               >
-                Sign up to be first to access
+                Be first to access
               </Text>
               <Text
                 fontWeight="bold"
@@ -270,7 +270,7 @@ export default function RecentNews() {
                 display={{ base: 'inline', sm: 'block' }}
               >
                 {' '}
-                upcoming 1btc products.
+                upcoming 1btc products
               </Text>
             </Box>
             <Text
