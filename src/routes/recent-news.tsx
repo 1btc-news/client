@@ -252,7 +252,7 @@ export default function RecentNews() {
           bg="blackAlpha.200"
           backdropFilter="blur(2px)"
         />
-        <ModalContent>
+        <ModalContent bgColor="var(--1btc-news-colors-brand-darkgray)">
           <ModalCloseButton />
           <ModalBody
             textAlign="center"
