@@ -10,20 +10,9 @@ import {
   Image,
   Modal,
   ModalOverlay,
-  ModalHeader,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverFooter,
-  PopoverHeader,
-  PopoverTrigger,
-  Spacer,
-  Stack,
   Text,
   useDisclosure,
   VStack,
@@ -202,17 +191,21 @@ export default function RecentNews() {
     >
       <HelmetSeo title="Recent News" />
       <Flex
-        alignItems="center"
+        alignItems={['flex-start', 'center']}
         justifyContent="space-between"
         w="100%"
         maxW={1200}
         pb={6}
         direction={['column', 'row']}
       >
-        <Flex alignItems="flex-start">
+        <Flex
+          alignItems="flex-start"
+          w={['100%', 'auto']}
+        >
           <Heading
             as="h1"
             size={['2xl', '3xl']}
+            mb={[6, 0]}
           >
             1btc.news
           </Heading>
@@ -222,6 +215,7 @@ export default function RecentNews() {
           size={['md', 'md', 'lg']}
           onClick={onOpen}
           w={['100%', 'auto']}
+          maxW="240px"
         >
           Join waitlist
         </Button>
@@ -259,13 +253,16 @@ export default function RecentNews() {
             pt={16}
             pb={12}
           >
-            <Box>
+            <Box
+              mb={3}
+              lineHeight={1}
+            >
               <Text
                 fontWeight="bold"
                 fontSize={['2xl', '2xl', '4xl']}
                 display={{ base: 'inline', sm: 'block' }}
               >
-                Sign up to be first to access
+                Be first to access
               </Text>
               <Text
                 fontWeight="bold"
@@ -273,14 +270,15 @@ export default function RecentNews() {
                 display={{ base: 'inline', sm: 'block' }}
               >
                 {' '}
-                upcoming 1btc products.
+                upcoming 1btc products
               </Text>
             </Box>
             <Text
               mb={6}
               fontSize={['sm', 'md', 'lg']}
             >
-              Stay up to date with 1btc.news.
+              By subscribing, you'll also get top news from the feed sent directly to your inbox,
+              weekly.
             </Text>
             <SignupForm />
           </ModalBody>
@@ -289,32 +287,3 @@ export default function RecentNews() {
     </Box>
   );
 }
-
-/* Popover form version
-
-<Popover>
-  <PopoverTrigger>
-    <Button
-      size={['xs', 'sm', 'md']}
-      overflowWrap={'break-word'}
-    >
-      Join Waitlist
-    </Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverHeader
-      pt={4}
-      fontWeight="bold"
-      fontSize="xl"
-      border="0"
-    >
-      Stay up to date
-    </PopoverHeader>
-    <PopoverCloseButton />
-    <PopoverBody>
-      <SignupForm />
-    </PopoverBody>
-  </PopoverContent>
-</Popover>
-
-*/
