@@ -277,8 +277,8 @@ export default function RecentNews() {
               mb={6}
               fontSize={['sm', 'md', 'lg']}
             >
-              Stay up to date with 1btc.news, and get the top-ranked Bitcoin news sent directly to
-              your inbox.
+              By subscribing, you'll also get top news from the feed sent directly to your inbox,
+              weekly.
             </Text>
             <SignupForm />
           </ModalBody>
