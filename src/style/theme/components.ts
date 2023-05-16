@@ -38,4 +38,23 @@ export const components = {
       variant: null,
     },
   },
+  TextArea: {
+    baseStyle: {
+      bg: 'blue',
+      outline: 'var(--1btc-news-colors-white)',
+      color: 'black',
+      ':focus-visible': {
+        borderColor: 'var(--1btc-news-colors-brand-orange)',
+        boxShadow: '0 0 1px red',
+        color: 'red',
+        backgroundColor: 'green',
+      },
+      '::placeholder': {
+        color: 'var(--1btc-news-colors-gray-600)',
+      },
+    },
+    defaultProps: {
+      variant: null,
+    },
+  },
 };
