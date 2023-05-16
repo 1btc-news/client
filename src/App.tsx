@@ -5,6 +5,7 @@ import Fonts from './components/fonts';
 import theme from './style/theme';
 import './style/news.css';
 import Root404 from './routes/root-404';
+import InscribeNews from './routes/inscribe-news';
 import PostNews from './routes/post-news';
 import ViewNews from './routes/view-news';
 import RecentNews from './routes/recent-news';
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <RecentNews />,
     errorElement: <Root404 />,
+  },
+  {
+    path: '/inscribe',
+    element: <InscribeNews />,
   },
   {
     path: '/post-news',
