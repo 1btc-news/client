@@ -13,7 +13,6 @@ import {
   StatLabel,
   StatNumber,
   StatHelpText,
-  StatArrow,
   StatGroup,
   Step,
   StepDescription,
@@ -107,6 +106,7 @@ function PageWrapper({ children }: WrapperProps) {
 }
 
 // page header - to be extracted into a component
+// EmailModal contains Button and SignupForm
 
 function PageHeader() {
   return (
