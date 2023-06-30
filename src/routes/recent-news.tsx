@@ -24,6 +24,7 @@ import Footer from '../components/footer';
 import HelmetSeo from '../components/helmet-seo';
 import SignupForm from '../components/signup-form';
 import BitcoinIcon from '../components/bitcoin-icon';
+import OneBtcIcon from '../components/1btc-icon';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -74,7 +75,7 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
       </Heading>
       <HStack flexWrap="wrap">
         <Text as="b">{author ? author : 'anonymous'}</Text>
-        {verifiedAuthor && <BitcoinIcon color="#F7931A" />}
+        {verifiedAuthor && <OneBtcIcon />}
         <Text>•</Text>
         <Text>
           {new Date(timestamp).toLocaleString('en-US', {
