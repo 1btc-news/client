@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/footer';
 import HelmetSeo from '../components/helmet-seo';
 import SignupForm from '../components/signup-form';
+import BitcoinIcon from '../components/bitcoin-icon';
 
 const apiUrl = new URL('https://inscribe.news/');
 
@@ -47,7 +48,12 @@ async function getNewsData(id: string) {
 }
 
 function NewsItem(props: InscriptionMeta & OrdinalNews) {
+  const oneBtcAuthors = ['1btc.news (@1btcnews)', '1btc.chat'];
+  let verifiedAuthor = false;
   const { number, timestamp, title, author } = props;
+  if (author && oneBtcAuthors.includes(author)) {
+    verifiedAuthor = true;
+  }
   return (
     <VStack
       alignItems="flex-start"
@@ -68,6 +74,7 @@ function NewsItem(props: InscriptionMeta & OrdinalNews) {
       </Heading>
       <HStack flexWrap="wrap">
         <Text as="b">{author ? author : 'anonymous'}</Text>
+        {verifiedAuthor && <BitcoinIcon color="#F7931A" />}
         <Text>•</Text>
         <Text>
           {new Date(timestamp).toLocaleString('en-US', {
